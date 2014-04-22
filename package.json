@@ -1,0 +1,43 @@
+{
+  "name": "sagase",
+  "version": "0.0.1",
+  "main": "lib/sagase.js",
+  "description": "A command line tool for searching files recursively.",
+  "homepage": "https://github.com/ChrisYip/Sagase",
+  "bugs": "https://github.com/ChrisYip/Sagase/issues",
+  "author": {
+    "name": "Chris Yip",
+    "email": "i@chrisyip.im",
+    "url": "http://chrisyip.im/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChrisYip/Sagase"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "bin": {
+    "sagase": "lib/cli.js"
+  },
+  "keywords": [
+    "find",
+    "file",
+    "search"
+  ],
+  "dependencies": {
+    "grunt-contrib-jshint": "~0.7.0",
+    "grunt-contrib-watch": "~0.5.0",
+    "load-grunt-tasks": "~0.2.0",
+    "time-grunt": "~0.2.0",
+    "jshint-stylish": "~0.1.3",
+    "chalk": "^0.4",
+    "nomnom": "^1.6",
+    "fs-extra": "^0.8"
+  },
+  "scripts": {
+    "test": "grunt"
+  }
+}
