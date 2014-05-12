@@ -5,7 +5,7 @@ A command line tool for searching files recursively.
 ## Usage
 
 ```bash
-npm install sagase
+npm install -g sagase
 
 sagase path/to/search /pattern/ /exclude_pattern/
 
