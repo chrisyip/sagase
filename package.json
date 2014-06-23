@@ -2,7 +2,7 @@
   "name": "sagase",
   "version": "0.1.1",
   "main": "lib/sagase.js",
-  "description": "A command line tool for searching files recursively.",
+  "description": "Searching files recursively.",
   "homepage": "https://github.com/ChrisYip/Sagase",
   "bugs": "https://github.com/ChrisYip/Sagase/issues",
   "author": {
