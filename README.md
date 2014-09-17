@@ -1,5 +1,7 @@
 # Sagase
 
+![Node version][node-image] [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
+
 Searching files recursively.
 
 ## Usage
@@ -74,4 +76,10 @@ find({
 
 ## License
 
-Copyright (c) 2014 Chris Yip. Licensed under the MIT license.
+Licensed under the MIT license.
+
+[node-image]: http://img.shields.io/node/v/gh-badges.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/sagase
+[npm-image]: http://img.shields.io/npm/v/sagase.svg?style=flat-square
+[daviddm-url]: https://david-dm.org/chrisyip/sagase
+[daviddm-image]: http://img.shields.io/david/chrisyip/sagase.svg?style=flat-square

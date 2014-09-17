@@ -1,10 +1,8 @@
-'use strict';
-
 module.exports = function (grunt) {
   // Show elapsed time at the end
-  require('time-grunt')(grunt);
+  require('time-grunt')(grunt)
   // Load all grunt tasks
-  require('load-grunt-tasks')(grunt);
+  require('load-grunt-tasks')(grunt)
 
   // Project configuration.
   grunt.initConfig({
@@ -28,14 +26,10 @@ module.exports = function (grunt) {
       lib: {
         files: '<%= jshint.lib.src %>',
         tasks: ['jshint:lib']
-      },
-      test: {
-        files: '<%= jshint.test.src %>',
-        tasks: ['jshint:test']
       }
     }
-  });
+  })
 
   // Default task.
-  grunt.registerTask('default', ['jshint']);
-};
+  grunt.registerTask('default', ['jshint'])
+}
