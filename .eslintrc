@@ -72,7 +72,6 @@
     "no-underscore-dangle": 0,
     "no-shadow": 0
   },
-  "parser": "babel-eslint",
   "env": {
     "node": true
   }
