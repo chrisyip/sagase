@@ -33,7 +33,8 @@ find({
   nameOnly: true,
   exclude: /pattern/,
   excludeNameOnly: true,
-  recursive: true
+  recursive: true,
+  shortenPath
   })
   .then(function (files) {
 
@@ -73,6 +74,8 @@ find({
 `-i`, `--ignore-case`: Flag for ignore case. Default is `true`.
 
 `-r`, `--recursive`: Flag for search recursively. Default is `true`.
+
+`-s`, `--shorten`: Remove `process.cwd()` from results. Default is 'false'.
 
 ## License
 
