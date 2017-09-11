@@ -1,26 +1,21 @@
 {
   "name": "sagase",
   "version": "0.2.1",
-  "main": "lib/sagase.js",
+  "main": "index.js",
   "description": "Searching files recursively.",
   "homepage": "https://github.com/chrisyip/Sagase",
   "bugs": "https://github.com/chrisyip/Sagase/issues",
   "author": {
     "name": "Chris Yip",
-    "email": "i@chrisyip.im",
-    "url": "http://chrisyip.im/"
+    "email": "chris@yesui.co"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/chrisyip/Sagase.git"
   },
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ],
+  "license": "MIT",
   "bin": {
-    "sagase": "lib/cli.js"
+    "sagase": "bin/cli.js"
   },
   "keywords": [
     "find",
@@ -28,19 +23,25 @@
     "search"
   ],
   "dependencies": {
-    "bluebird": "^2.9.34",
-    "chalk": "^1.1.0",
-    "fs-extra": "^0.22.1",
-    "lodash": "^3.10.0",
-    "nomnom": "^1.8.1"
+    "@flatten/array": "^1.1.3",
+    "chalk": "^1.1.3",
+    "is": "^3.2.1",
+    "mz": "^2.6.0",
+    "yargs": "^8.0.2"
   },
   "devDependencies": {
-    "eslint": "^0.24.1"
+    "ava": "^0.22.0",
+    "command-line-test": "^1.0.10",
+    "nyc": "^11.2.1",
+    "standard": "^10.0.3"
   },
   "scripts": {
-    "test": "./node_modules/eslint/bin/eslint.js ."
+    "lint": "standard",
+    "test": "nyc ava",
+    "report": "nyc report --reporter=lcov --reporter=html",
+    "codecov": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4.0.0"
   }
 }
