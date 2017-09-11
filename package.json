@@ -1,6 +1,6 @@
 {
   "name": "sagase",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "main": "index.js",
   "description": "Searching files recursively.",
   "homepage": "https://github.com/chrisyip/Sagase",
