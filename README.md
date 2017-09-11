@@ -16,6 +16,19 @@ sagase path/to/search /pattern/ /exclude_pattern/
 sagase -i path/to/search /pattern/ /exclude_pattern/
 
 sagase -f path/to/search -p /pattern/ -x /exclude_pattern/
+
+sagase --help
+Options:
+  --folder, -f                           Path to search
+  --pattern, -p                          A regexp or string for matching file
+  --exclude, -x                          A regexp or string for excluding file
+  --excludeNameOnly, --exclude-nameonly  Apply excluder on file name only
+                                                      [boolean] [default: false]
+  --recursive, -r                        Search recursively
+                                                       [boolean] [default: true]
+  --ignore-case, -i                      Ignore case  [boolean] [default: false]
+  --version                              Show version number           [boolean]
+  --help                                 Show help                     [boolean]
 ```
 
 ### In Node.js
@@ -25,57 +38,51 @@ npm install --save sagase
 ```
 
 ```js
-var find = require('sagase').find;
+const { find } = require('sagase')
 
 find({
   folder: './',
-  pattern: /pattern/,
-  nameOnly: true,
-  exclude: /pattern/,
-  excludeNameOnly: true,
-  recursive: true,
-  shortenPath
-  })
-  .then(function (files) {
-
-    })
+  pattern: /pattern/, // accept function, regexp or string
+  nameOnly: false,
+  exclude: /pattern/, // accept function, regexp or string
+  excludeNameOnly: false,
+  recursive: true
+})
+  .then(files => {})
 
 // `pattern` and `exclude` accept [Function]
 // in this case, `nameOnly` and `excludeNameOnly` will be ignored
 find({
   folder: './',
-  pattern: function (name, path) {
+  pattern (name, path) {
     return true // to mark as matched
   },
-  exclude: function (name, path) {
+  exclude (name, path) {
     return true // to mark as excluded
-  },
-  recursive: true
-  })
-  .then(function (files) {
+  }
+})
+  .then(files => {})
 
-    })
+// Synchronous `find`
+const { findSync } = require('sagase')
+const files = findSync(options)
 ```
-
-`Sagase.find` returns a [bluebird](https://github.com/petkaantonov/bluebird) `Promise`.
 
 ### Available Options
 
-`-f`, `--folder`: Folder to search. Default is current folder (cli) or `process.cwd()` (Node.js).
+`-f`, `--folder`: Path to search.
 
-`-p`, `--pattern`: Regular expression to match..
+`-p`, `--pattern`: A regexp or string for matching file.
 
-`--name-only`: Only apply `pattern` on **filename**. Default is `true`.
+`--name-only`: Only apply `pattern` on **filename**.
 
-`-x`, `--exclude`: Regular expression to exclude.
+`-x`, `--exclude`: A regexp or string for excluding file.
 
-`--exclude-name-only`: Only apply `exclude` on **filename**. Default is `true`.
+`--exclude-nameonly`: Only apply `exclude` on **filename**.
 
-`-i`, `--ignore-case`: Flag for ignore case. Default is `true`.
+`-i`, `--ignore-case`: Should ignore case.
 
-`-r`, `--recursive`: Flag for search recursively. Default is `true`.
-
-`-s`, `--shorten`: Remove `process.cwd()` from results. Default is 'false'.
+`-r`, `--recursive`: Search recursively.
 
 ## License
 
